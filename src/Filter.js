@@ -1,15 +1,24 @@
 import React from 'react'
+import uuid from "react-uuid";
 
-const Filter = () => {
+const Filter = ({ filteredList, clearFilter, removeItem }) => {
+
   return (
     <div className="filter">
-      <div className="filter__items">
-        <div className="filter__item">
-          <span>Filter</span>
-          <button></button>
-        </div>
+      <div className='filter__item-list'>
+        {filteredList.map((item) => {
+          return (
+            <div className="filter__item" key={uuid()}>
+              <div>{item}</div>
+              <button onClick={() => removeItem(item)}></button>
+            </div>
+          );
+        })}
       </div>
-      <button className='filter__close'>Clear</button>
+
+      <button className="filter__close" onClick={() => clearFilter()}>
+        Clear
+      </button>
     </div>
   );
 }

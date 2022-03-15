@@ -1,40 +1,46 @@
-import React from 'react'
-import { ReactSVG } from "react-svg";
-import {ReactCompnent} from "./images/account.svg"
+import React, { useState } from 'react';
+import uuid from 'react-uuid';
 
-const Job = ({ company, logo, position, role, level, postedAt, contract, location, languages, tools }) => {
+const Job = ({ addFilterItem, company, logo, newPost, featured, position, role, level, postedAt, contract, location, languages, tools }) => {
   
-    console.log(logo);
     return (
-      <div className="job">
+      <div className={ featured ? "job job--featured" : "job" }>
         <div className="job__header">
-          <img
-            className="job__logo"
-            src={logo}
-            alt={"corp logo"}
-          />
+          <img className="job__logo" src={logo} alt={"corp logo"} />
           <div>
-            <div className="job__company">{company}</div>
+            <div className="job__highlight">
+              <div className="job__company">{company}</div>
+              { newPost && <div className="job__new">NEW!</div> }
+              { featured && <div className="job__featured">FEATURED</div> }
+            </div>
             <div className="job__position">{position}</div>
             <ul className="job__details">
-              <li className="job__postedAt">{postedAt}</li>
-              <li className="job__contract">{contract}</li>
-              <li className="job__location">{location}</li>
+              <li>{postedAt}</li>
+              <li>{contract}</li>
+              <li>{location}</li>
             </ul>
           </div>
         </div>
         <hr></hr>
         <div className="job__tags">
-          <div>{role}</div>
-          <div>{level}</div>
+          <div onClick={() => addFilterItem(role)}>{role}</div>
+          <div onClick={() => addFilterItem(level)}>{level}</div>
           <>
             {languages.map((lang) => {
-              return <div>{lang}</div>;
+              return (
+                <div key={uuid()} onClick={() => addFilterItem(lang)}>
+                  {lang}
+                </div>
+              );
             })}
           </>
           <>
             {tools.map((tool) => {
-              return <div>{tool}</div>;
+              return (
+                <div key={uuid()} onClick={() => addFilterItem(tool)}>
+                  {tool}
+                </div>
+              );
             })}
           </>
         </div>
