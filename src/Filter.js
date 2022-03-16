@@ -5,7 +5,7 @@ const Filter = ({ filteredList, clearFilter, removeItem }) => {
 
   return (
     <div className="filter">
-      <div className='filter__item-list'>
+      <div className="filter__item-list">
         {filteredList.map((item) => {
           return (
             <div className="filter__item" key={uuid()}>
@@ -15,10 +15,11 @@ const Filter = ({ filteredList, clearFilter, removeItem }) => {
           );
         })}
       </div>
-
-      <button className="filter__close" onClick={() => clearFilter()}>
-        Clear
-      </button>
+      <div className="filter__close-box">
+        <button className="filter__close" onClick={() => clearFilter()}>
+          Clear
+        </button>
+      </div>
     </div>
   );
 }

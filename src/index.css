@@ -33,16 +33,12 @@ body {
 }
 
 main {
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 10rem;
   background-color: var(--clr-background);
-}
-
-hr {
-  border: none;
-  height: 1px;
-  background-color: #e3e3e3;
+  min-height: 900px;
 }
 
 /* Jobs component */
@@ -53,9 +49,8 @@ hr {
   width: 95vw;
   max-width: 1100px;
   margin-bottom: 6rem;
+  padding-bottom: calc();
 }
-
- /* Job component */
 
 .job {
   background-color: #fff;
@@ -75,11 +70,6 @@ hr {
     display: flex;
     align-content: center;
   }
-
-  hr {
-    display: none;
-  }
-
 }
 
 .job > * {
@@ -151,6 +141,11 @@ hr {
 .job__position {
   font-weight: var(--font-bold);
   font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.job__position:hover {
+  color: var(--clr-primary)
 }
 
 .job__details {
@@ -168,6 +163,12 @@ hr {
   margin-right: 1.5rem;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e3e3e3;
+}
+
 .job__tags {
   display: flex;
   flex-wrap: wrap;
@@ -177,6 +178,10 @@ hr {
 
 @media (min-width: 768px) {
   
+    hr {
+    display: none;
+  }
+
   .job__tags {
     justify-content: flex-end;
     align-items: center;
@@ -185,7 +190,7 @@ hr {
 }
 
 .job__tags > div {
-  margin: .5rem 1rem;
+  margin: .25rem 1rem;
   height: 2rem;
   padding: .5rem;
   background-color: var(--clr-tags);
@@ -228,7 +233,14 @@ hr {
   min-width: 5rem;
   border-radius: var(--radius);
   height: 2rem;
-  margin: 1rem;
+  margin: .5rem;
+}
+
+@media (min-width: 768px) {
+
+  .filter__item {
+    margin: 1rem;
+  }
 }
 
 .filter__item div {
@@ -251,6 +263,11 @@ hr {
 
 .filter__item button:hover {
   background-color: var(--clr-very-dark-gray-cyan);
+}
+
+.filter__close-box {
+  display: grid;
+  place-content: center;
 }
 
 .filter__close {

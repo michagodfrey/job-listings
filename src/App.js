@@ -3,21 +3,6 @@ import Jobs from "./Jobs";
 import Filter from "./Filter";
 import data from "./data.json";
 
-const tags = [];
-
-const getTags = () => {
-  data.map((item) => {
-    tags.push(item.role);
-    tags.push(item.level);
-    tags.push(item.languages);
-    tags.push(item.tools);
-  })
-}
-
-getTags();
-
-const allFilters = [...new Set(tags)];
-
 function App() {
   
   const [jobs, setJobs] = useState(data);
@@ -27,19 +12,67 @@ function App() {
     if (!filteredList.includes(item)) {
       setFilteredList([...filteredList, item]);
     }
-    else {
-      console.log('already there');
-      // do some animation on the item
+    filterJobs(item);
+  }
+
+  const filterJobs = (item) => {
+    let filterList = []
+    data.forEach((job) => {
+      if (
+        job.role.includes(item) ||
+        job.level.includes(item) ||
+        job.languages.includes(item) ||
+        job.tools.includes(item)
+      ) {
+        filterList.push(job);
+      }
+    });
+    if (filterList) {
+      setJobs(filterList);
+    } else {
+      setJobs(data);
     }
   }
 
   const clearFilter = () => {
     setFilteredList([]);
+    setJobs(data);
   }
 
   const removeItem = (removed) => { 
-    setFilteredList(filteredList.filter((item) => item !== removed));
+    if (filteredList.length > 1) {
+      setFilteredList(filteredList.filter((item) => item !== removed));
+      reFilterJobs(filteredList);
+    } else {
+      clearFilter();
+    }
   }
+
+  const reFilterJobs = (filteredList) => {
+    // let newJobsList = [];
+    // filteredList.forEach((item) => {
+    //   data.forEach((job) => {
+    //     if (
+    //       job.role.includes(item) ||
+    //       job.level.includes(item) ||
+    //       job.languages.includes(item) ||
+    //       job.tools.includes(item)
+    //     ) {
+    //       if (!newJobsList.includes(job)) {
+    //         newJobsList.push(job);
+    //       }
+    //     }
+    //   });
+    // });
+    // console.log(newJobsList);
+    // setJobs(newJobsList);
+    let newFilters = new Set(filteredList);
+    let jobTags = new Set({data})
+
+    
+  }
+
+  console.log(jobs)
 
   return (
     <main>
