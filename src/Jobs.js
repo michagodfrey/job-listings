@@ -7,6 +7,7 @@ const Jobs = ({ jobs, addFilterItem }) => {
     <div className='job-list'>
       {jobs.map((job) => {
         const {
+          id,
           company,
           logo,
           newPost,
@@ -21,7 +22,7 @@ const Jobs = ({ jobs, addFilterItem }) => {
           tools,
         } = job;
         return (
-          <div key={uuid()} className={featured ? "job job--featured" : "job"}>
+          <div key={id} className={featured ? "job job--featured" : "job"}>
             <div className="job__header">
               <img className="job__logo" src={logo} alt={"corp logo"} />
               <div>
@@ -30,7 +31,7 @@ const Jobs = ({ jobs, addFilterItem }) => {
                   {newPost && <div className="job__new">NEW!</div>}
                   {featured && <div className="job__featured">FEATURED</div>}
                 </div>
-                <a className="job__position">{position}</a>
+                <div className="job__position">{position}</div>
                 <ul className="job__details">
                   <li>{postedAt}</li>
                   <li>{contract}</li>

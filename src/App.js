@@ -1,82 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Jobs from "./Jobs";
 import Filter from "./Filter";
 import data from "./data.json";
 
 function App() {
-  
   const [jobs, setJobs] = useState(data);
-  const [filteredList, setFilteredList] = useState([]);
+  const [filter, setFilter] = useState([]);
 
   const addFilterItem = (item) => {
-    if (!filteredList.includes(item)) {
-      setFilteredList([...filteredList, item]);
+    if (!filter.includes(item)) {
+      setFilter([...filter, item]);
     }
-    filterJobs(item);
-  }
+    filterJobs(filter);
+  };
 
-  const filterJobs = (item) => {
-    let filterList = []
+  const filterJobs = (filter) => {
+    let newJobList = [];
     data.forEach((job) => {
-      if (
-        job.role.includes(item) ||
-        job.level.includes(item) ||
-        job.languages.includes(item) ||
-        job.tools.includes(item)
-      ) {
-        filterList.push(job);
+      let string = JSON.stringify(job);
+      let count = 0;
+      filter.forEach((item) => {
+        if (string.includes(item)) {
+          count++;
+        }
+      });
+      if (count === filter.length) {
+        newJobList.push(job);
       }
     });
-    if (filterList) {
-      setJobs(filterList);
-    } else {
-      setJobs(data);
-    }
-  }
+    setJobs(newJobList);
+  };
 
   const clearFilter = () => {
-    setFilteredList([]);
+    setFilter([]);
     setJobs(data);
-  }
+  };
 
-  const removeItem = (removed) => { 
-    if (filteredList.length > 1) {
-      setFilteredList(filteredList.filter((item) => item !== removed));
-      reFilterJobs(filteredList);
+  const removeItem = (removed) => {
+    if (filter.length > 1) {
+      setFilter(filter.filter((item) => item !== removed));
+      filterJobs(filter);
     } else {
       clearFilter();
     }
-  }
-
-  const reFilterJobs = (filteredList) => {
-    // let newJobsList = [];
-    // filteredList.forEach((item) => {
-    //   data.forEach((job) => {
-    //     if (
-    //       job.role.includes(item) ||
-    //       job.level.includes(item) ||
-    //       job.languages.includes(item) ||
-    //       job.tools.includes(item)
-    //     ) {
-    //       if (!newJobsList.includes(job)) {
-    //         newJobsList.push(job);
-    //       }
-    //     }
-    //   });
-    // });
-    // console.log(newJobsList);
-    // setJobs(newJobsList);
-    let newFilters = new Set(filteredList);
-    let jobTags = new Set({data})
-
-    
-  }
-
-  console.log(jobs)
+  };
 
   return (
     <main>
-      {filteredList.length > 0 && <Filter filteredList={filteredList} clearFilter={clearFilter} removeItem={removeItem} />}
+      {filter.length > 0 && (
+        <Filter
+          filter={filter}
+          clearFilter={clearFilter}
+          removeItem={removeItem}
+        />
+      )}
       <Jobs jobs={jobs} addFilterItem={addFilterItem} />
     </main>
   );

@@ -29,7 +29,6 @@ body {
   body {
     background-image: url("../public/images/bg-header-desktop.svg");
   }
-  
 }
 
 main {
@@ -46,7 +45,7 @@ main {
 .job-list {
   display: flex;
   flex-direction: column;
-  width: 95vw;
+  width: 90vw;
   max-width: 1100px;
   margin-bottom: 6rem;
   padding-bottom: calc();
@@ -186,7 +185,6 @@ hr {
     justify-content: flex-end;
     align-items: center;
   }
-
 }
 
 .job__tags > div {
@@ -214,9 +212,9 @@ hr {
   display: flex;
   justify-content: space-between;
   padding: .5rem;
-  transform: translateY(-50%);
+  transform: translateY(-25%);
   max-width: 1100px;
-  width: 95vw;
+  width: 90vw;
 }
 
 .filter__item-list {
@@ -237,6 +235,10 @@ hr {
 }
 
 @media (min-width: 768px) {
+
+  .filter {
+    transform: translateY(-50%);
+  }
 
   .filter__item {
     margin: 1rem;
