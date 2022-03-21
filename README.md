@@ -6,7 +6,7 @@ Thanks for checking out this repository.
 
 This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-You can view my [Frontend Mentor solution page here](<https://www.frontendmentor.io/profile/michagodfrey>)
+You can view this solution and others on my [Frontend Mentor solution page here](<https://www.frontendmentor.io/profile/michagodfrey>)
 
 ## Table of contents
 
@@ -127,5 +127,5 @@ This has been great practice of React and I will continue to practice building t
 ## Author
 
 - Website - [Michael Godfrey](https://michagodfrey.github.io/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/michagodfrey)
+- Frontend Mentor - [@michagodfrey](https://www.frontendmentor.io/profile/michagodfrey)
 - Twitter - [@Michael07865192](https://twitter.com/Michael07865192)
