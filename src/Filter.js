@@ -1,6 +1,7 @@
 import React from 'react'
 import uuid from "react-uuid";
 
+// uuid library used to generate unique keys for filter items
 const Filter = ({ filter, clearFilter, removeItem }) => {
 
   return (

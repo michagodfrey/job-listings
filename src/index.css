@@ -40,6 +40,15 @@ main {
   min-height: 900px;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+}
+
 /* Jobs component */
 
 .job-list {
@@ -140,7 +149,6 @@ main {
 .job__position {
   font-weight: var(--font-bold);
   font-size: 1.1rem;
-  cursor: pointer;
 }
 
 .job__position:hover {
@@ -284,4 +292,14 @@ hr {
 .filter__close:hover {
   color: var(--clr-primary);
   border-bottom: 1px solid var(--clr-primary);
+}
+
+/* attribution */
+
+.attribution {
+  font-size: 11px; text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

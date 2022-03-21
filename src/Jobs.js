@@ -1,8 +1,8 @@
 import React from 'react';
 import uuid from "react-uuid";
 
-
-const Jobs = ({ jobs, addFilterItem }) => {
+// uuid used to generate unique keys easily
+const Jobs = ({ jobs, addItem }) => {
   return (
     <div className='job-list'>
       {jobs.map((job) => {
@@ -31,7 +31,12 @@ const Jobs = ({ jobs, addFilterItem }) => {
                   {newPost && <div className="job__new">NEW!</div>}
                   {featured && <div className="job__featured">FEATURED</div>}
                 </div>
-                <div className="job__position">{position}</div>
+                <a
+                  href={`https://www.google.com/search?q=${company}`}
+                  className="job__position"
+                >
+                  {position}
+                </a>
                 <ul className="job__details">
                   <li>{postedAt}</li>
                   <li>{contract}</li>
@@ -41,12 +46,12 @@ const Jobs = ({ jobs, addFilterItem }) => {
             </div>
             <hr></hr>
             <div className="job__tags">
-              <div onClick={() => addFilterItem(role)}>{role}</div>
-              <div onClick={() => addFilterItem(level)}>{level}</div>
+              <div onClick={() => addItem(role)}>{role}</div>
+              <div onClick={() => addItem(level)}>{level}</div>
               <>
                 {languages.map((lang) => {
                   return (
-                    <div key={uuid()} onClick={() => addFilterItem(lang)}>
+                    <div key={uuid()} onClick={() => addItem(lang)}>
                       {lang}
                     </div>
                   );
@@ -55,7 +60,7 @@ const Jobs = ({ jobs, addFilterItem }) => {
               <>
                 {tools.map((tool) => {
                   return (
-                    <div key={uuid()} onClick={() => addFilterItem(tool)}>
+                    <div key={uuid()} onClick={() => addItem(tool)}>
                       {tool}
                     </div>
                   );
