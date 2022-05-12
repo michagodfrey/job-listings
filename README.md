@@ -42,8 +42,8 @@ Filtered list
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/jobs-listing-with-filtering-built-with-react-LMccYL0ca)
+- Live Site URL: [GitHub Pages](https://michagodfrey.github.io/job-listings/)
 
 ## My process
 
