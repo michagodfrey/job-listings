@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/job-listings/static/css/main.186b648d.css",
-    "main.js": "/job-listings/static/js/main.137a7e36.js",
+    "main.css": "/job-listings/static/css/main.eb448531.css",
+    "main.js": "/job-listings/static/js/main.c0214cee.js",
     "static/media/bg-header-desktop.svg": "/job-listings/static/media/bg-header-desktop.8694f4668c94cdc9d16e.svg",
     "index.html": "/job-listings/index.html",
     "static/media/bg-header-mobile.svg": "/job-listings/static/media/bg-header-mobile.9cb13612af1317a665a2.svg",
     "static/media/icon-remove.svg": "/job-listings/static/media/icon-remove.70c075ce001e5ccae7c6.svg",
-    "main.186b648d.css.map": "/job-listings/static/css/main.186b648d.css.map",
-    "main.137a7e36.js.map": "/job-listings/static/js/main.137a7e36.js.map"
+    "main.eb448531.css.map": "/job-listings/static/css/main.eb448531.css.map",
+    "main.c0214cee.js.map": "/job-listings/static/js/main.c0214cee.js.map"
   },
   "entrypoints": [
-    "static/css/main.186b648d.css",
-    "static/js/main.137a7e36.js"
+    "static/css/main.eb448531.css",
+    "static/js/main.c0214cee.js"
   ]
 }
