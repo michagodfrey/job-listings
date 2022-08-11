@@ -32,7 +32,7 @@ const Jobs = ({ jobs, addItem }) => {
                   {featured && <div className="job__featured">FEATURED</div>}
                 </div>
                 <a
-                  href={`https://www.google.com/search?q=${company}`}
+                  href={`https://www.google.com`}
                   className="job__position"
                 >
                   {position}

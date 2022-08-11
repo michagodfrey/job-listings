@@ -34,11 +34,11 @@ Users should be able to:
 
 Unfiltered list
 
-![](./public/images/screenshot-jobs.jpg)
+![Screenshot](./public/images/screenshot-jobs.jpg)
 
 Filtered list
 
-![](./public/images/screenshot-jobs-filtered.jpg)
+![Screenshot with filtering](./public/images/screenshot-jobs-filtered.jpg)
 
 ### Links
 

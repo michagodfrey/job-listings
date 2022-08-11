@@ -5,7 +5,7 @@ import Filter from "./Filter";
 import data from "./data.json";
 
 function App() {
-  // 2 useState hooks are used, one to display the jobs, 
+  // 2 useState hooks are used, one to display the jobs,
   // the other is to filter the first hook with results the user has clicked
   const [jobs, setJobs] = useState(data);
   const [filter, setFilter] = useState([]);
@@ -20,7 +20,7 @@ function App() {
     }
   };
 
-  // each time the filter hook changes this hook filters 
+  // each time the filter hook changes this hook filters
   // the data and updates the jobs hook accordingly
   useEffect(() => {
     let newJobList = [];
@@ -57,6 +57,7 @@ function App() {
   // components returned here, filter only displays if it has values
   return (
     <main>
+      <h1>Jobs List</h1>
       {filter.length > 0 && (
         <Filter
           filter={filter}
@@ -66,9 +67,9 @@ function App() {
       )}
       <Jobs jobs={jobs} addItem={addItem} />
        <div class="attribution">
-         Challenge by <a href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt" target="_blank">Frontend Mentor</a>.
+         Challenge by <a href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt">Frontend Mentor</a>.
          Coded by <a href="https://github.com/michagodfrey">Michael Godfrey</a>.
-       </div> 
+       </div>
     </main>
   );
 }

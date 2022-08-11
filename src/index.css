@@ -40,6 +40,10 @@ main {
   min-height: 900px;
 }
 
+h1 {
+  font-size: 0px;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -102,7 +106,7 @@ a:visited {
 }
 
 @media (min-width: 768px) {
-  
+
   .job__header {
     flex-direction: row;
     padding: 1.25rem 0 .5rem;
@@ -184,7 +188,7 @@ hr {
 }
 
 @media (min-width: 768px) {
-  
+
     hr {
     display: none;
   }
